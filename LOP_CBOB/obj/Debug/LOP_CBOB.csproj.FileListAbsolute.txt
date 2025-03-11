@@ -17,3 +17,4 @@ C:\Users\Acer\source\repos\LOP_CBOB\LOP_CBOB\obj\Debug\LOP_CBOB.Form7.resources
 C:\Users\Acer\source\repos\LOP_CBOB\LOP_CBOB\obj\Debug\LOP_CBOB.Form8.resources
 C:\Users\Acer\source\repos\LOP_CBOB\LOP_CBOB\obj\Debug\LOP_CBOB.Form9.resources
 C:\Users\Acer\source\repos\LOP_CBOB\LOP_CBOB\obj\Debug\LOP_CBOB.docgia.resources
+C:\Users\Acer\source\repos\LOP_CBOB\LOP_CBOB\obj\Debug\LOP_CBOB.Form10.resources

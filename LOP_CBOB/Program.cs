@@ -16,7 +16,7 @@ namespace LOP_CBOB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new docgia());
+            Application.Run(new Form10());
         }
     }
 }
