@@ -25,7 +25,7 @@ namespace LOP_CBOB
             {
                 con.Open();
             }
-            string sql = "SELECT Sinhvien.MaSinhVien ,Sinhvien.HoTen, Sinhvien.NgaySinh, Sinhvien.GioiTinh, Sinhvien.DienThoai, Sinhvien.DiaChi, Lophoc.TenLop FROM Sinhvien JOIN Lophoc ON Sinhvien.MaLop = Lophoc.MaLop";
+            string sql = "SELECT Sinhvien.MaSinhVien ,Sinhvien.HoTen, Sinhvien.NgaySinh, Sinhvien.GioiTinh, Sinhvien.DienThoai, Sinhvien.DiaChi, Lophoc.TenLop, Lophoc.MaLop FROM Sinhvien JOIN Lophoc ON Sinhvien.MaLop = Lophoc.MaLop";
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -88,7 +88,7 @@ namespace LOP_CBOB
             {
                 con.Open();
             }
-            String sql = "select Sinhvien.MaSinhVien ,Sinhvien.HoTen, Sinhvien.NgaySinh, Sinhvien.GioiTinh, Sinhvien.DienThoai, Sinhvien.DiaChi, Lophoc.TenLop from Sinhvien JOIN Lophoc ON Sinhvien.MaLop = Lophoc.MaLop where MaSinhVien like '%" + maSv + "%' and HoTen like N'%" + tenSv + "%' and GioiTinh like N'%" + gioiTinh + "%' and DienThoai like '%" + dienThoai + "%' and TenLop like '%" + tenLop + "%'";
+            String sql = "select Sinhvien.MaSinhVien ,Sinhvien.HoTen, Sinhvien.NgaySinh, Sinhvien.GioiTinh, Sinhvien.DienThoai, Sinhvien.DiaChi, Lophoc.TenLop,Lophoc.MaLop from Sinhvien JOIN Lophoc ON Sinhvien.MaLop = Lophoc.MaLop where MaSinhVien like '%" + maSv + "%' and HoTen like N'%" + tenSv + "%' and GioiTinh like N'%" + gioiTinh + "%' and DienThoai like '%" + dienThoai + "%' and TenLop like '%" + tenLop + "%'";
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dtt = new DataTable();
@@ -174,6 +174,11 @@ namespace LOP_CBOB
             {
                 MessageBox.Show("Trùng mã sinh viên !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaSinhVien.Focus();
+                return;
+            }
+            if(cbbTenLop.Text == "--- Chọn lớp ---")
+            {
+                MessageBox.Show("Chưa chọn lớp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             String sql = "insert Sinhvien values('" + maSinhVien + "', N'" + tenSv + "',  '" + ngaySinhSql + "', N'" + gioiTinh + "','" + maLop + "','" + sdt + "', N'" + diaChi + "')";

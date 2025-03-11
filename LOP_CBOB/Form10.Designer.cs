@@ -64,6 +64,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -294,6 +295,7 @@
             this.Column2,
             this.Column4,
             this.Column3,
+            this.Column8,
             this.Column6,
             this.Column5,
             this.Column7});
@@ -460,6 +462,12 @@
             this.Column3.HeaderText = "Giới tính";
             this.Column3.Name = "Column3";
             // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "MaLop";
+            this.Column8.HeaderText = "Mã Lớp";
+            this.Column8.Name = "Column8";
+            // 
             // Column6
             // 
             this.Column6.DataPropertyName = "TenLop";
@@ -539,6 +547,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
