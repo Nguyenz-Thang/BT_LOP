@@ -13,56 +13,61 @@ namespace LOP_CBOB
 {
     public partial class Form10 : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-6VHQAFG;Initial Catalog=BT_Lop;Integrated Security=True");
-
+        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-6VHQAFG;Initial Catalog=BT_Lop;Integrated Security=True");
+        SqlConnection con = Thuvien.con;
         public Form10()
         {
             InitializeComponent();
         }
         public void loadSinhVien()
         {
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
+            //if (con.State == ConnectionState.Closed)
+            //{
+            //    con.Open();
+            //}
             string sql = "SELECT Sinhvien.MaSinhVien ,Sinhvien.HoTen, Sinhvien.NgaySinh, Sinhvien.GioiTinh, Sinhvien.DienThoai, Sinhvien.DiaChi, Lophoc.TenLop, Lophoc.MaLop FROM Sinhvien JOIN Lophoc ON Sinhvien.MaLop = Lophoc.MaLop";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            cmd.Dispose();
-            con.Close();
-            dataGridView1.DataSource = dt;
-            dataGridView1.Refresh();
+            //SqlCommand cmd = new SqlCommand(sql, con);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //DataTable dt = new DataTable();
+            //da.Fill(dt);
+            //cmd.Dispose();
+            //con.Close();
+            //dataGridView1.DataSource = dt;
+            //dataGridView1.Refresh();
+
+            Thuvien.Hienthi(dataGridView1, sql);
 
         }
         public void load_lophoc()
         {
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
+            //if (con.State == ConnectionState.Closed)
+            //{
+            //    con.Open();
+            //}
             string sql = "SELECT * FROM Lophoc";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.SelectCommand = cmd;
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            cmd.Dispose();
-            con.Close();
+            Thuvien.ComboboxHT(cbbTenLop, sql, "TenLop", "MaLop");
+            Thuvien.ComboboxHT(cbbTenLop_tk, sql, "TenLop", "MaLop");
 
-            DataRow r = dt.NewRow();
-            r["MaLop"] = "";
-            r["TenLop"] = "--- Chọn lớp ---";
-            dt.Rows.InsertAt(r, 0);
+            //SqlCommand cmd = new SqlCommand(sql, con);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //da.SelectCommand = cmd;
+            //DataTable dt = new DataTable();
+            //da.Fill(dt);
+            //cmd.Dispose();
+            //con.Close();
 
-            cbbTenLop.DataSource = dt;
-            cbbTenLop.DisplayMember = "TenLop";
-            cbbTenLop.ValueMember = "MaLop";
+            //DataRow r = dt.NewRow();
+            //r["MaLop"] = "";
+            //r["TenLop"] = "--- Chọn lớp ---";
+            //dt.Rows.InsertAt(r, 0);
 
-            cbbTenLop_tk.DataSource = dt;
-            cbbTenLop_tk.DisplayMember = "TenLop";
-            cbbTenLop_tk.ValueMember = "MaLop";
+            //cbbTenLop.DataSource = dt;
+            //cbbTenLop.DisplayMember = "TenLop";
+            //cbbTenLop.ValueMember = "MaLop";
+
+            //cbbTenLop_tk.DataSource = dt;
+            //cbbTenLop_tk.DisplayMember = "TenLop";
+            //cbbTenLop_tk.ValueMember = "MaLop";
 
         }
         private void buttonTimKiem_Click(object sender, EventArgs e)
@@ -80,7 +85,7 @@ namespace LOP_CBOB
                 gioiTinh = "";
             }
             String tenLop = cbbTenLop_tk.Text;
-            if(tenLop == "--- Chọn lớp ---")
+            if(tenLop == "--- Chọn ---")
             {
                 tenLop = "";
             }
@@ -89,14 +94,15 @@ namespace LOP_CBOB
                 con.Open();
             }
             String sql = "select Sinhvien.MaSinhVien ,Sinhvien.HoTen, Sinhvien.NgaySinh, Sinhvien.GioiTinh, Sinhvien.DienThoai, Sinhvien.DiaChi, Lophoc.TenLop,Lophoc.MaLop from Sinhvien JOIN Lophoc ON Sinhvien.MaLop = Lophoc.MaLop where MaSinhVien like '%" + maSv + "%' and HoTen like N'%" + tenSv + "%' and GioiTinh like N'%" + gioiTinh + "%' and DienThoai like '%" + dienThoai + "%' and TenLop like '%" + tenLop + "%'";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dtt = new DataTable();
-            da.Fill(dtt);
-            cmd.Dispose();
-            con.Close();
-            dataGridView1.DataSource = dtt;
-            dataGridView1.Refresh();
+            //SqlCommand cmd = new SqlCommand(sql, con);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //DataTable dtt = new DataTable();
+            //da.Fill(dtt);
+            //cmd.Dispose();
+            //con.Close();
+            //dataGridView1.DataSource = dtt;
+            //dataGridView1.Refresh();
+            Thuvien.Hienthi(dataGridView1, sql);
         }
 
         private void Form10_Load(object sender, EventArgs e)
@@ -166,27 +172,28 @@ namespace LOP_CBOB
                 return;
             }
             //b2: kết nối sql
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
+            //if (con.State == ConnectionState.Closed)
+            //{
+            //    con.Open();
+            //}
             if (checkTrungMaSinhVien(maSinhVien))
             {
                 MessageBox.Show("Trùng mã sinh viên !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaSinhVien.Focus();
                 return;
             }
-            if(cbbTenLop.Text == "--- Chọn lớp ---")
+            if(cbbTenLop.Text == "--- Chọn ---")
             {
                 MessageBox.Show("Chưa chọn lớp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             String sql = "insert Sinhvien values('" + maSinhVien + "', N'" + tenSv + "',  '" + ngaySinhSql + "', N'" + gioiTinh + "','" + maLop + "','" + sdt + "', N'" + diaChi + "')";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
+            //SqlCommand cmd = new SqlCommand(sql, con);
+            //cmd.ExecuteNonQuery();
+            //cmd.Dispose();
+            //con.Close();
+            Thuvien.insert(sql);
             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
-            con.Close();
             loadSinhVien();
         }
 

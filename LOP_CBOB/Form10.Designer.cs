@@ -48,6 +48,14 @@
             this.txtMaSinhVien = new System.Windows.Forms.TextBox();
             this.txtTenSinhVien = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbbTenLop_tk = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -60,14 +68,6 @@
             this.txtMaSinhVien_tk = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -306,6 +306,55 @@
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaSinhVien";
+            this.Column1.HeaderText = "Mã sinh viên";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "HoTen";
+            this.Column2.HeaderText = "Tên sinh viên";
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "NgaySinh";
+            this.Column4.HeaderText = "Ngày sinh";
+            this.Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "GioiTinh";
+            this.Column3.HeaderText = "Giới tính";
+            this.Column3.Name = "Column3";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "MaLop";
+            this.Column8.HeaderText = "Mã Lớp";
+            this.Column8.Name = "Column8";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "TenLop";
+            this.Column6.HeaderText = "Tên lớp";
+            this.Column6.Name = "Column6";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "DienThoai";
+            this.Column5.HeaderText = "Điện thoại";
+            this.Column5.Name = "Column5";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "DiaChi";
+            this.Column7.HeaderText = "Địa chỉ";
+            this.Column7.Name = "Column7";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbbTenLop_tk);
@@ -436,55 +485,6 @@
             this.label1.Size = new System.Drawing.Size(81, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã sinh viên";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaSinhVien";
-            this.Column1.HeaderText = "Mã sinh viên";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "HoTen";
-            this.Column2.HeaderText = "Tên sinh viên";
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "NgaySinh";
-            this.Column4.HeaderText = "Ngày sinh";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "GioiTinh";
-            this.Column3.HeaderText = "Giới tính";
-            this.Column3.Name = "Column3";
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "MaLop";
-            this.Column8.HeaderText = "Mã Lớp";
-            this.Column8.Name = "Column8";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "TenLop";
-            this.Column6.HeaderText = "Tên lớp";
-            this.Column6.Name = "Column6";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "DienThoai";
-            this.Column5.HeaderText = "Điện thoại";
-            this.Column5.Name = "Column5";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "DiaChi";
-            this.Column7.HeaderText = "Địa chỉ";
-            this.Column7.Name = "Column7";
             // 
             // Form10
             // 
